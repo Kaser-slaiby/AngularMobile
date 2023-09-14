@@ -21,8 +21,10 @@
       </button>
       <span>AngularMobile</span>
       <span class="spacer"></span>
-      <a mat-button routerLink="/">Dashboard</a>
-      <a mat-button routerLink="/about">About</a>
+      <div [class.hidden]="isHandset$ | async">
+        <a mat-button routerLink="/">Dashboard</a>
+        <a mat-button routerLink="/about">About</a>
+      </div>
     </mat-toolbar>
     <!-- Add Content Here -->
     <router-outlet></router-outlet>
